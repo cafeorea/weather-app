@@ -1,9 +1,8 @@
 body {
-  background-color: orange;
 }
 .container {
   width: 350px;
-  height: 680px;
+  height: 681px;
   border-radius: 20px;
   display: block;
   margin: 0 auto;
@@ -14,17 +13,55 @@ body {
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   width: 350px;
-  background-color: lightblue;
+  background-color: #8dc4e4;
+}
+
+.city-name {
+  position: absolute;
+  display: inline-block;
+  top: 8px;
+  margin-left: 15px;
+  text-align: center;
+  font-size: 50px;
+}
+.current-conditions {
+  position: absolute;
+  display: block;
+  list-style: none;
+  top: 80px;
+  padding-left: 0px !important;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+li:not(:last-child) {
+  margin-bottom: 2px;
+}
+
+.current-temp {
+  position: absolute;
+  display: inline-block;
+  font-size: 60px;
+  width: 350px;
+  text-align: center;
+  top: 175px;
+  margin-left: 15px;
+}
+
+.unit {
+  font-size: 20px;
 }
 
 .house-image {
   display: flex;
   width: 350px;
+  padding-top: 100px;
 }
 
 .main-section {
-  min-height: 400px;
-  max-height: 400px;
+  min-height: 410px;
+  max-height: 410px;
   width: 350px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
