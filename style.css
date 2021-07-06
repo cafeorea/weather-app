@@ -1,0 +1,32 @@
+body {
+  background-color: orange;
+}
+.container {
+  width: 350px;
+  height: 680px;
+  border-radius: 20px;
+  display: block;
+  margin: 0 auto;
+}
+
+.sky-section {
+  display: block;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 350px;
+  background-color: lightblue;
+}
+
+.house-image {
+  display: flex;
+  width: 350px;
+}
+
+.main-section {
+  min-height: 400px;
+  max-height: 400px;
+  width: 350px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #869392;
+}
