@@ -1,6 +1,7 @@
 body {
 }
 .container {
+  border: 1px solid white;
   width: 350px;
   height: 681px;
   border-radius: 20px;
@@ -10,10 +11,9 @@ body {
 
 .sky-section {
   display: block;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-radius: 20px;
   width: 350px;
-  background-color: #8dc4e4;
+  background-color: #8fcbf7;
 }
 
 .city-name {
@@ -35,22 +35,22 @@ body {
   font-size: 18px;
 }
 
-li:not(:last-child) {
-  margin-bottom: 2px;
-}
-
 .current-temp {
   position: absolute;
   display: inline-block;
-  font-size: 60px;
+  font-size: 65px;
   width: 350px;
   text-align: center;
-  top: 175px;
-  margin-left: 15px;
+  top: 190px;
+  margin-left: 10px;
 }
 
 .unit {
   font-size: 20px;
+  font-weight: 400;
+  position: relative;
+  line-height: 1;
+  top: -25px;
 }
 
 .house-image {
@@ -62,8 +62,48 @@ li:not(:last-child) {
 .main-section {
   min-height: 410px;
   max-height: 410px;
-  width: 350px;
+  max-width: 350px;
+  min-width: 350px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   background-color: #869392;
+}
+
+.current-icon {
+  display: block;
+  position: absolute;
+  top: 160px;
+  height: 60px;
+  margin-left: 15px;
+}
+
+.row {
+  border-radius: 5px;
+  background-color: rgb(133, 147, 146);
+  margin-top: 60px;
+  width: 350px;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.col {
+  border: 2px #7c8b8a solid;
+  border-radius: 3px;
+  background-color: #7c8b8a;
+}
+
+.forecast {
+  list-style: none;
+  padding: 0px !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.forecast-date {
+  text-align: center;
+}
+.forecast-temp {
+  text-align: center;
 }
