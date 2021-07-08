@@ -107,3 +107,33 @@ body {
 .forecast-temp {
   text-align: center;
 }
+
+form {
+  display: inline-block;
+  margin: 0 auto;
+  width: 100%;
+  padding: none;
+}
+
+.search-bar {
+  border-radius: 5px;
+  height: 20px;
+  padding: none;
+  margin: 0px;
+}
+
+.search-button {
+  height: 25px;
+  margin: none;
+  border: 1px grey solid;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.find-me {
+  border: 1px grey solid;
+  border-radius: 5px;
+  display: block;
+  margin: 0 auto;
+  margin-top: 8px;
+}
