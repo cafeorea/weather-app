@@ -1,7 +1,8 @@
 body {
+  background-color: #3e3737;
 }
 .container {
-  border: 1px solid white;
+  border: 1px solid #3e3737;
   width: 350px;
   height: 681px;
   border-radius: 20px;
@@ -23,6 +24,7 @@ body {
   margin-left: 15px;
   text-align: center;
   font-size: 50px;
+  font-family: "Lato", sans-serif;
 }
 .current-conditions {
   position: absolute;
@@ -30,9 +32,23 @@ body {
   list-style: none;
   top: 80px;
   padding-left: 0px !important;
-  margin-left: 20px;
+  margin-left: 18px;
   margin-top: 20px;
-  font-size: 18px;
+  font-size: 16px;
+  font-family: "Lato", sans-serif;
+  color: #6b7978;
+}
+
+.current-desc {
+  color: black;
+}
+
+.current-speed {
+  color: black;
+}
+
+.current-rain {
+  color: black;
 }
 
 .current-temp {
@@ -43,6 +59,7 @@ body {
   text-align: center;
   top: 190px;
   margin-left: 10px;
+  font-family: "Lato", sans-serif;
 }
 
 .unit {
@@ -51,6 +68,7 @@ body {
   position: relative;
   line-height: 1;
   top: -25px;
+  font-family: "Lato", sans-serif;
 }
 
 .house-image {
@@ -72,8 +90,8 @@ body {
 .current-icon {
   display: block;
   position: absolute;
-  top: 170px;
-  height: 60px;
+  top: 160px;
+  height: 70px;
   margin-left: 15px;
 }
 
@@ -103,9 +121,29 @@ body {
 
 .forecast-date {
   text-align: center;
+  font-family: "Lato", sans-serif;
 }
 .forecast-temp {
   text-align: center;
+  font-family: "Lato", sans-serif;
+}
+
+.unit-text {
+  padding: 0px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+  font-size: 13px;
+}
+
+.toggle {
+  color: #8fcbf7;
+  transition: cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.toggle:hover {
+  cursor: pointer;
+  color: pink;
 }
 
 form {
@@ -113,6 +151,7 @@ form {
   margin: 0 auto;
   width: 100%;
   padding: none;
+  font-family: "Lato", sans-serif;
 }
 
 .search-bar {
@@ -120,6 +159,8 @@ form {
   height: 20px;
   padding: none;
   margin: 0px;
+  margin-top: 15px;
+  font-family: "Lato", sans-serif;
 }
 
 .search-button {
@@ -128,6 +169,11 @@ form {
   border: 1px grey solid;
   border-radius: 5px;
   display: inline-block;
+  font-family: "Lato", sans-serif;
+}
+
+.search-button:hover {
+  cursor: pointer;
 }
 
 .find-me {
@@ -136,4 +182,68 @@ form {
   display: block;
   margin: 0 auto;
   margin-top: 8px;
+  font-family: "Lato", sans-serif;
+}
+
+.find-me:hover {
+  cursor: pointer;
+}
+
+.last-update {
+  margin-top: 30px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}
+
+.current-d {
+  color: pink;
+}
+
+.current-t {
+  color: pink;
+}
+
+.my-credit {
+  padding: 0px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-family: "Lato", sans-serif;
+  font-size: 15px;
+}
+
+.sns {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  font-size: 13px;
+}
+
+.sns-link {
+  display: inline-block;
+  padding: 3px;
+  padding-left: 6px;
+  border-left: solid 1px black;
+  padding-bottom: 0px;
+  padding-top: 0px;
+  font-family: "Lato", sans-serif;
+  color: pink;
+}
+
+.sns-link:hover {
+  cursor: pointer;
+  color: #8fcbf7;
+}
+
+.app-name {
+  color: #8fcbf7;
+}
+
+.my-name {
+  color: #8fcbf7;
+}
+
+.sns-link:first-child {
+  border-left: none;
+  padding-left: 3px;
 }
