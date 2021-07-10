@@ -1,5 +1,5 @@
 body {
-  background-color: #3e3737;
+  background-color: slategray;
 }
 .container {
   border: 1px solid #3e3737;
@@ -8,6 +8,8 @@ body {
   border-radius: 20px;
   display: block;
   margin: 0 auto;
+  box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1), 0 0 0 2px rgb(255, 255, 255),
+    0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
 }
 
 .sky-section {
@@ -161,32 +163,48 @@ form {
   margin: 0px;
   margin-top: 15px;
   font-family: "Lato", sans-serif;
+  border-top-color: pink;
+  border-bottom-color: #8fcbf7;
+  border-left-color: pink;
+  border-right-color: #8fcbf7;
 }
 
 .search-button {
-  height: 25px;
-  margin: none;
-  border: 1px grey solid;
-  border-radius: 5px;
   display: inline-block;
   font-family: "Lato", sans-serif;
+  background-color: gainsboro;
+  height: 25px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-top-color: pink;
+  border-bottom-color: #8fcbf7;
+  border-left-color: pink;
+  border-right-color: #8fcbf7;
 }
 
 .search-button:hover {
   cursor: pointer;
+  background-color: silver;
 }
 
 .find-me {
-  border: 1px grey solid;
-  border-radius: 5px;
   display: block;
   margin: 0 auto;
-  margin-top: 8px;
   font-family: "Lato", sans-serif;
+  background-color: gainsboro;
+  height: 25px;
+  margin-top: 5px;
+  border-radius: 3px;
+  border: 1px solid;
+  border-top-color: pink;
+  border-bottom-color: #8fcbf7;
+  border-left-color: pink;
+  border-right-color: #8fcbf7;
 }
 
 .find-me:hover {
   cursor: pointer;
+  background-color: silver;
 }
 
 .last-update {
