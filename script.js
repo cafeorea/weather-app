@@ -53,7 +53,7 @@ function updateDate(element) {
   let forecastFour = document.querySelector(".day-four-date");
   forecastFour.innerHTML = daysShort[date.getDay() + 4];
   let forecastFive = document.querySelector(".day-five-date");
-  forecastFive.innerHTML = daysShort[date.getDay() + 15;
+  forecastFive.innerHTML = daysShort[date.getDay() + 5];
 }
 
 function updateTime(element) {
@@ -94,9 +94,9 @@ function currentMainTemp(response) {
   let currentWind = response.data.wind.speed;
   let currentWindText = document.querySelector(".current-speed");
   currentWindText.innerHTML = currentWind;
-  let currentPrec = response.data.rain["1h"];
-  let currentPrecText = document.querySelector(".current-rain");
-  currentPrecText.innerHTML = currentPrec;
+  let currentHum = response.data.main.humidity;
+  let currentHumText = document.querySelector(".current-hum");
+  currentHumText.innerHTML = currentHum;
   let weatherImage = document.querySelector("#icon");
   let iconCode = response.data.weather["0"]["icon"];
   weatherImage.setAttribute(
@@ -127,6 +127,8 @@ function changeUnit(event) {
       units.innerText = "°F";
     }
   } else {
+    let header = document.querySelector("h1");
+    let city = header.innerHTML;
     celFarElement.innerHTML = "°C";
     let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
@@ -145,8 +147,97 @@ function changeUnit(event) {
 let unitToggle = document.querySelector(".toggle");
 unitToggle.addEventListener("click", changeUnit);
 
-// Update days of forecast
-
-// Search bar updates location
-
 // Find my location
+function showMyLocation(event) {
+  navigator.geolocation.getCurrentPosition(showPosition);
+  function showPosition(position) {
+    let lat = position.coords.latitude;
+    let lon = position.coords.longitude;
+    console.log(`Latitude: ${lat}. Longitude: ${lon}.`);
+    let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+    axios.get(apiUrl).then(updateAll);
+  }
+}
+
+function updateAll(response) {
+  let location = response.data.name;
+  let header = document.querySelector("h1");
+  header.innerHTML = location;
+  let celFarElement = document.querySelector(".unit");
+  let celFarUnit;
+  if (celFarElement.innerHTML === "°C") {
+    celFarUnit = "metric";
+  } else {
+    celFarUnit = "imperial";
+  }
+  let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=${celFarUnit}&appid=${apiKey}`;
+  axios.get(apiUrl).then(currentMainTemp);
+  function currentMainTemp(response) {
+    let responseTemp = response.data.main.temp;
+    let currentTemp = document.querySelector(".temp-number");
+    currentTemp.innerHTML = responseTemp.toFixed(1);
+    let currentCon = response.data.weather[0].description;
+    let currentConText = document.querySelector(".current-desc");
+    currentConText.innerHTML = currentCon;
+    let currentWind = response.data.wind.speed;
+    let currentWindText = document.querySelector(".current-speed");
+    currentWindText.innerHTML = currentWind;
+    let currentHum = response.data.main.humidity;
+    let currentHumText = document.querySelector(".current-hum");
+    currentHumText.innerHTML = currentHum;
+    let weatherImage = document.querySelector("#icon");
+    let iconCode = response.data.weather["0"]["icon"];
+    weatherImage.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+    );
+  }
+}
+
+let findMe = document.querySelector(".find-me");
+findMe.addEventListener("click", showMyLocation);
+
+function searchLocation(event) {
+  event.preventDefault();
+  let input = document.querySelector(".search-bar");
+  let header = document.querySelector("h1");
+  let searchCity = input.value;
+  let correctCity = searchCity[0].toUpperCase() + searchCity.substring(1);
+  header.innerHTML = correctCity;
+
+  let celFarElement = document.querySelector(".unit");
+  let celFarUnit;
+  if (celFarElement.innerHTML === "°C") {
+    celFarUnit = "metric";
+  } else {
+    celFarUnit = "imperial";
+  }
+  let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${searchCity}&units=${celFarUnit}&appid=${apiKey}`;
+  axios.get(apiUrl).then(currentMainTemp);
+  function currentMainTemp(response) {
+    let responseTemp = response.data.main.temp;
+    let currentTemp = document.querySelector(".temp-number");
+    currentTemp.innerHTML = responseTemp.toFixed(1);
+    let currentCon = response.data.weather[0].description;
+    let currentConText = document.querySelector(".current-desc");
+    currentConText.innerHTML = currentCon;
+    let currentWind = response.data.wind.speed;
+    let currentWindText = document.querySelector(".current-speed");
+    currentWindText.innerHTML = currentWind;
+    let currentHum = response.data.main.humidity;
+    let currentHumText = document.querySelector(".current-hum");
+    currentHumText.innerHTML = currentHum;
+    let weatherImage = document.querySelector("#icon");
+    let iconCode = response.data.weather["0"]["icon"];
+    weatherImage.setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${iconCode}@2x.png`
+    );
+  }
+}
+
+let newLocation = document.querySelector("form");
+newLocation.addEventListener("submit", searchLocation);
