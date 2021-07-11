@@ -27,6 +27,7 @@ body {
   text-align: center;
   font-size: 50px;
   font-family: "Lato", sans-serif;
+  text-shadow: 2px 2px 2px white;
 }
 .current-conditions {
   position: absolute;
@@ -62,6 +63,7 @@ body {
   top: 190px;
   margin-left: 10px;
   font-family: "Lato", sans-serif;
+  text-shadow: 2px 2px 2px white;
 }
 
 .unit {
@@ -71,6 +73,7 @@ body {
   line-height: 1;
   top: -25px;
   font-family: "Lato", sans-serif;
+  text-shadow: 2px 2px 2px white;
 }
 
 .house-image {
@@ -92,8 +95,8 @@ body {
 .current-icon {
   display: block;
   position: absolute;
-  top: 160px;
-  height: 70px;
+  top: 150px;
+  height: 90px !important;
   margin-left: 15px;
 }
 

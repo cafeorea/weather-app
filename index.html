@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
   <body>
     <div class="container">
@@ -42,8 +43,11 @@
             src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
             alt="weather icon"
             class="current-icon"
+            id="icon"
           />
-          <h2 class="current-temp">20.4<span class="unit">°C</span></h2>
+          <h2 class="current-temp">
+            <span class="temp-number">20.4</span><span class="unit">°C</span>
+          </h2>
         </div>
         <div class="main-section">
           <div class="weather-forecast row">
@@ -58,8 +62,9 @@
                         alt="Weather icon"
                       />
                     </li>
-                    <li class="day-one-temp forecast-temp">
-                      20.1<span class="small-unit">°C</span>
+                    <li class="forecast-temp">
+                      <span class="day-one-temp">20.1</span
+                      ><span class="small-unit">°C</span>
                     </li>
                   </ul>
                 </div>
@@ -76,8 +81,9 @@
                         alt="Weather icon"
                       />
                     </li>
-                    <li class="day-two-temp forecast-temp">
-                      20.1<span class="small-unit">°C</span>
+                    <li class="forecast-temp">
+                      <span class="day-two-temp">20.1</span
+                      ><span class="small-unit">°C</span>
                     </li>
                   </ul>
                 </div>
@@ -94,8 +100,9 @@
                         alt="Weather icon"
                       />
                     </li>
-                    <li class="day-three-temp forecast-temp">
-                      20.1<span class="small-unit">°C</span>
+                    <li class="forecast-temp">
+                      <span class="day-three-temp">20.1</span
+                      ><span class="small-unit">°C</span>
                     </li>
                   </ul>
                 </div>
@@ -112,8 +119,9 @@
                         alt="Weather icon"
                       />
                     </li>
-                    <li class="day-four-temp forecast-temp">
-                      20.1<span class="small-unit">°C</span>
+                    <li class="forecast-temp">
+                      <span class="day-four-temp">20.1</span
+                      ><span class="small-unit">°C</span>
                     </li>
                   </ul>
                 </div>
@@ -130,8 +138,9 @@
                         alt="Weather icon"
                       />
                     </li>
-                    <li class="day-five-temp forecast-temp">
-                      20.1<span class="small-unit">°C</span>
+                    <li class="forecast-temp">
+                      <span class="day-five-temp">20.1</span
+                      ><span class="small-unit">°C</span>
                     </li>
                   </ul>
                 </div>
@@ -162,6 +171,7 @@
                 <span class="current-t">15:04</span>
               </p>
             </div>
+
             <footer>
               <div class="credit">
                 <p class="my-credit">
