@@ -103,6 +103,36 @@ function currentMainTemp(response) {
     "src",
     `http://openweathermap.org/img/wn/${iconCode}@2x.png`
   );
+  let celFarElement = document.querySelector(".unit");
+  let celFarUnit;
+  if (celFarElement.innerHTML === "°C") {
+    celFarUnit = "metric";
+  } else {
+    celFarUnit = "imperial";
+  }
+  let lat = response.data.coord.lat;
+  let lon = response.data.coord.lon;
+  let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+  let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${celFarUnit}&appid=${apiKey}`;
+  axios.get(forecastUrl).then(updateForecast);
+}
+
+function updateForecast(response) {
+  let dayOne = document.querySelector(".day-one-temp");
+  let tempOne = response.data.daily[1].temp.max;
+  dayOne.innerHTML = tempOne.toFixed(1);
+  let dayTwo = document.querySelector(".day-two-temp");
+  let tempTwo = response.data.daily[2].temp.max;
+  dayTwo.innerHTML = tempTwo.toFixed(1);
+  let dayThree = document.querySelector(".day-three-temp");
+  let tempThree = response.data.daily[3].temp.max;
+  dayThree.innerHTML = tempThree.toFixed(1);
+  let dayFour = document.querySelector(".day-four-temp");
+  let tempFour = response.data.daily[4].temp.max;
+  dayFour.innerHTML = tempFour.toFixed(1);
+  let dayFive = document.querySelector(".day-five-temp");
+  let tempFive = response.data.daily[5].temp.max;
+  dayFive.innerHTML = tempFive.toFixed(1);
 }
 
 //Togle celsius / farenheit unit
@@ -122,6 +152,11 @@ function changeUnit(event) {
       temp = temp.toFixed(1);
       let tempNow = document.querySelector(".temp-number");
       tempNow.innerText = temp;
+      let lat = response.data.coord.lat;
+      let lon = response.data.coord.lon;
+      let unit = "imperial";
+      let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${unit}&appid=${apiKey}`;
+      axios.get(forecastUrl).then(updateForecast);
     }
     for (let units of smallCelFar) {
       units.innerText = "°F";
@@ -140,6 +175,11 @@ function changeUnit(event) {
       for (let units of smallCelFar) {
         units.innerText = "°C";
       }
+      let lat = response.data.coord.lat;
+      let lon = response.data.coord.lon;
+      let unit = "metric";
+      let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${unit}&appid=${apiKey}`;
+      axios.get(forecastUrl).then(updateForecast);
     }
   }
 }
@@ -193,6 +233,18 @@ function updateAll(response) {
       "src",
       `http://openweathermap.org/img/wn/${iconCode}@2x.png`
     );
+    let celFarElement = document.querySelector(".unit");
+    let celFarUnit;
+    if (celFarElement.innerHTML === "°C") {
+      celFarUnit = "metric";
+    } else {
+      celFarUnit = "imperial";
+    }
+    let lat = response.data.coord.lat;
+    let lon = response.data.coord.lon;
+    let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${celFarUnit}&appid=${apiKey}`;
+    axios.get(forecastUrl).then(updateForecast);
   }
 }
 
@@ -236,6 +288,18 @@ function searchLocation(event) {
       "src",
       `http://openweathermap.org/img/wn/${iconCode}@2x.png`
     );
+    let celFarElement = document.querySelector(".unit");
+    let celFarUnit;
+    if (celFarElement.innerHTML === "°C") {
+      celFarUnit = "metric";
+    } else {
+      celFarUnit = "imperial";
+    }
+    let lat = response.data.coord.lat;
+    let lon = response.data.coord.lon;
+    let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
+    let forecastUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude=current,minutely,hourly,alerts&units=${celFarUnit}&appid=${apiKey}`;
+    axios.get(forecastUrl).then(updateForecast);
   }
 }
 
