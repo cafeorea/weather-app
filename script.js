@@ -121,18 +121,48 @@ function updateForecast(response) {
   let dayOne = document.querySelector(".day-one-temp");
   let tempOne = response.data.daily[1].temp.max;
   dayOne.innerHTML = tempOne.toFixed(1);
+  let iconOne = document.querySelector("#one");
+  let codeOne = response.data.daily[1].weather[0].icon;
+  iconOne.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${codeOne}@2x.png`
+  );
   let dayTwo = document.querySelector(".day-two-temp");
   let tempTwo = response.data.daily[2].temp.max;
   dayTwo.innerHTML = tempTwo.toFixed(1);
+  let iconTwo = document.querySelector("#two");
+  let codeTwo = response.data.daily[2].weather[0].icon;
+  iconTwo.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${codeTwo}@2x.png`
+  );
   let dayThree = document.querySelector(".day-three-temp");
   let tempThree = response.data.daily[3].temp.max;
   dayThree.innerHTML = tempThree.toFixed(1);
+  let iconThree = document.querySelector("#three");
+  let codeThree = response.data.daily[3].weather[0].icon;
+  iconThree.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${codeThree}@2x.png`
+  );
   let dayFour = document.querySelector(".day-four-temp");
   let tempFour = response.data.daily[4].temp.max;
   dayFour.innerHTML = tempFour.toFixed(1);
+  let iconFour = document.querySelector("#four");
+  let codeFour = response.data.daily[4].weather[0].icon;
+  iconFour.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${codeFour}@2x.png`
+  );
   let dayFive = document.querySelector(".day-five-temp");
   let tempFive = response.data.daily[5].temp.max;
   dayFive.innerHTML = tempFive.toFixed(1);
+  let iconFive = document.querySelector("#five");
+  let codeFive = response.data.daily[5].weather[0].icon;
+  iconFive.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${codeFive}@2x.png`
+  );
 }
 
 //Togle celsius / farenheit unit
@@ -193,7 +223,6 @@ function showMyLocation(event) {
   function showPosition(position) {
     let lat = position.coords.latitude;
     let lon = position.coords.longitude;
-    console.log(`Latitude: ${lat}. Longitude: ${lon}.`);
     let apiKey = "5fac56a1753f48f57cf3600eb2f64df9";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
     axios.get(apiUrl).then(updateAll);

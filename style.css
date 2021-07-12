@@ -137,6 +137,31 @@ body {
   font-family: "Lato", sans-serif;
 }
 
+#one {
+  height: 64px;
+  width: 64px;
+}
+
+#two {
+  height: 64px;
+  width: 64px;
+}
+
+#three {
+  height: 64px;
+  width: 64px;
+}
+
+#four {
+  height: 64px;
+  width: 64px;
+}
+
+#five {
+  height: 64px;
+  width: 64px;
+}
+
 .unit-text {
   padding: 0px;
   margin-top: 3px;
